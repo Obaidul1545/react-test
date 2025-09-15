@@ -1,22 +1,23 @@
 import './App.css';
 import Count from './Count';
 import Batsman from './Batsman';
+import { Suspense } from 'react';
+import GetData from './FatchApi';
+
+const fatchUsers = async () => {
+  const res = await fetch('https://jsonplaceholder.typicode.com/users');
+  return res.json();
+};
 
 function App() {
-  const players = [
-    { id: 1, name: 'Sakib', age: 25, Address: 'Magura' },
-    { id: 2, name: 'Tamim', age: 30, Address: 'Khulna' },
-    { id: 3, name: 'Sabbir', age: 27, Address: 'Rajshahi' },
-    { id: 4, name: 'Liton', age: 32, Address: 'Dhaka' },
-  ];
+  const users = fatchUsers();
 
-  const handleClick = () => {
-    alert('clicked');
-  };
   return (
     <>
+      <Suspense fallback={<p>Loding...</p>}>
+        <GetData users={users}></GetData>
+      </Suspense>
       <Batsman></Batsman>
-      {/* <button onClick={handleClick}>clicked</button> */}
       <Count></Count>
     </>
   );

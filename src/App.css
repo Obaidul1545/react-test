@@ -32,3 +32,9 @@
     animation: logo-spin infinite 20s linear;
   }
 }
+
+.card {
+  padding: 20px 50px;
+  border: 1px solid yellow;
+  border-radius: 12px;
+}

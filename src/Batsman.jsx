@@ -1,11 +1,6 @@
 import { useState } from 'react';
 
 export default function Batsman() {
-  const styles = {
-    border: '1px solid yellow',
-    padding: '20px 60px',
-    borderRadius: '10px',
-  };
   const [runs, setRuns] = useState(0);
 
   const handleSingle = () => {
@@ -22,7 +17,7 @@ export default function Batsman() {
   };
   return (
     <>
-      <div style={styles}>
+      <div className="card">
         <h2>Batsman Score</h2>
         <h1>Score: {runs}</h1>
 
