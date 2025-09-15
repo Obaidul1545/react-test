@@ -3,6 +3,7 @@ import Count from './Count';
 import Batsman from './Batsman';
 import { Suspense } from 'react';
 import GetData from './FatchApi';
+import ShowHide from './ShowHide';
 
 const fatchUsers = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/users');
@@ -19,6 +20,7 @@ function App() {
       </Suspense>
       <Batsman></Batsman>
       <Count></Count>
+      <ShowHide></ShowHide>
     </>
   );
 }
