@@ -23,11 +23,17 @@ export default function Count() {
   };
   return (
     <>
-      <div style={countStyle}>
+      <div className="space-x-3 " style={countStyle}>
         <h1>Count: {count}</h1>
-        <button onClick={handleCountIncr}>Add</button>
-        <button onClick={handleCountDicr}>Minus</button>
-        <button onClick={handleCountReset}>Reset</button>
+        <button className="btn btn-primary" onClick={handleCountIncr}>
+          Add
+        </button>
+        <button className="btn btn-primary" onClick={handleCountDicr}>
+          Minus
+        </button>
+        <button className="btn btn-primary" onClick={handleCountReset}>
+          Reset
+        </button>
       </div>
     </>
   );

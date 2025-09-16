@@ -5,7 +5,7 @@ export default function GetData({ users }) {
   const getUsers = use(users);
 
   return (
-    <div className="card">
+    <div className="card grid grid-cols-4 gap-5">
       {getUsers.map((user) => (
         <User key={user.id} user={user}></User>
       ))}

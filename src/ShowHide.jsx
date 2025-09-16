@@ -10,10 +10,14 @@ export default function ShowHide() {
     setText('');
   };
   return (
-    <div className="card">
+    <div className="card space-y-3">
       <h2>{text}</h2>
-      <button onClick={showText}>show</button>
-      <button onClick={hideText}>Hide</button>
+      <button className="btn btn-primary" onClick={showText}>
+        show
+      </button>
+      <button className="btn btn-primary" onClick={hideText}>
+        Hide
+      </button>
     </div>
   );
 }

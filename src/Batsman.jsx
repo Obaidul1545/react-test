@@ -17,13 +17,19 @@ export default function Batsman() {
   };
   return (
     <>
-      <div className="card">
+      <div className="card space-y-3">
         <h2>Batsman Score</h2>
         <h1>Score: {runs}</h1>
 
-        <button onClick={handleSingle}>Single</button>
-        <button onClick={handleFour}>Four</button>
-        <button onClick={handleSix}>Six</button>
+        <button className="btn btn-primary" onClick={handleSingle}>
+          Single
+        </button>
+        <button className="btn btn-primary" onClick={handleFour}>
+          Four
+        </button>
+        <button className="btn btn-primary" onClick={handleSix}>
+          Six
+        </button>
       </div>
     </>
   );

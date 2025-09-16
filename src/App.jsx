@@ -1,20 +1,30 @@
 import './App.css';
 import Count from './Count';
 import Batsman from './Batsman';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import GetData from './FatchApi';
 import ShowHide from './ShowHide';
+import UserData from './UserData';
 
 const fatchUsers = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/users');
   return res.json();
 };
 
+const userData = async () => {
+  const res = await fetch('https://fake-json-api.mock.beeceptor.com/users');
+  return res.json();
+};
+
 function App() {
   const users = fatchUsers();
+  const peopleData = userData();
 
   return (
     <>
+      <Suspense fallback={<p>Loading...</p>}>
+        <UserData peopleData={peopleData}></UserData>
+      </Suspense>
       <Suspense fallback={<p>Loding...</p>}>
         <GetData users={users}></GetData>
       </Suspense>
