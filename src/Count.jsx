@@ -8,8 +8,9 @@ export default function Count() {
     setCount(newCount);
   };
   const handleCountDicr = () => {
-    const newCount = count - 1;
-    setCount(newCount);
+    if (count > 0) {
+      setCount(count - 1);
+    }
   };
   const handleCountReset = () => {
     const newCount = 0;
